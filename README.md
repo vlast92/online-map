@@ -1,1 +1,1 @@
-Module for adding GoogleMap on your site. Joomla 3.6+ requared.
+Module for adding GoogleMap or YandexMap on your site. Joomla 3.6+ requared.

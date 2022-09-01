@@ -1,14 +1,29 @@
 <?php
 /**
- * @package    seoclick-googlemap
+ * @package    online-map
  *
  * @author     Vlast <vlasteg@mail.ru>
  * @copyright  A copyright
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
- * @link       https://seoclick.by
  */
 
 defined('_JEXEC') or die;
+
+/**
+ * @var object $module
+ * @var int $map_height
+ * @var string $center_lat
+ * @var string $center_lng
+ * @var int $map_zoom
+ * @var int $map_zoom_marker_click
+ * @var string $marker_image
+ * @var string $info_window
+ * @var array $map_controls
+ * @var array $places
+ * @var object $document
+ * @var string $moduleclass_sfx
+ * @var string $module_path
+ */
 
 $module_id = 'google-map-' . $module->id . '-' . rand(1, 99999);
 
@@ -94,4 +109,4 @@ $script .= "
 
 $document->addScriptDeclaration($script);
 ?>
-<div id="<?= $module_id ?>" class="seoclick-map <?= $moduleclass_sfx ?>"></div>
+<div id="<?= $module_id ?>" class="online-map <?= $moduleclass_sfx ?>"></div>

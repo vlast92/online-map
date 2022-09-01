@@ -4,39 +4,39 @@
         <field
             name="note"
             type="note"
-            label="MOD_SEOCLICK_MAP_PLACES_NAME"/>
+            label="MOD_ONLINE_MAP_PLACES_NAME"/>
         <field
             name="name"
             type="text"
-            label="MOD_SEOCLICK_MAP_PLACES_NAME"/>
+            label="MOD_ONLINE_MAP_PLACES_NAME"/>
         <field
             name="note_2"
             type="note"
-            label="MOD_SEOCLICK_MAP_COORD"/>
+            label="MOD_ONLINE_MAP_COORD"/>
         <field
             name="lat"
             type="text"
-            label="MOD_SEOCLICK_MAP_LAT"/>
+            label="MOD_ONLINE_MAP_LAT"/>
         <field
             name="lng"
             type="text"
-            label="MOD_SEOCLICK_MAP_LNG"/>
+            label="MOD_ONLINE_MAP_LNG"/>
         <field
             name="note_3"
             type="note"
-            label="MOD_SEOCLICK_MAP_INFO_WINDOW"/>
+            label="MOD_ONLINE_MAP_INFO_WINDOW"/>
         <field
                 name="info_window_image"
                 type="media"
-                label="MOD_SEOCLICK_MAP_INFO_WINDOW_IMAGE"
-                description="MOD_SEOCLICK_MAP_INFO_WINDOW_IMAGE_DESCRIPTION"
+                label="MOD_ONLINE_MAP_INFO_WINDOW_IMAGE"
+                description="MOD_ONLINE_MAP_INFO_WINDOW_IMAGE_DESCRIPTION"
                 preview="true"
                 directory="/" />
         <field
             name="info_window_content"
             type="textarea"
-            label="MOD_SEOCLICK_MAP_INFO_WINDOW_CONTENT"
-            description="MOD_SEOCLICK_MAP_INFO_WINDOW_CONTENT_DESCRIPTION"
+            label="MOD_ONLINE_MAP_INFO_WINDOW_CONTENT"
+            description="MOD_ONLINE_MAP_INFO_WINDOW_CONTENT_DESCRIPTION"
             rows="10"
             filter="raw"/>
     </fieldset>

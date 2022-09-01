@@ -1,19 +1,20 @@
 <?php
 /**
- * @package    seoclick-googlemap
+ * @package    online-map
  *
  * @author     Vlast <vlasteg@mail.ru>
  * @copyright  A copyright
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
- * @link       https://seoclick.by
  */
 
 use Joomla\CMS\Helper\ModuleHelper;
 
 defined('_JEXEC') or die;
 
+/** @var object $params */
+
 $document    = JFactory::getDocument();
-$module_path = "/modules/mod_seoclick_map";
+$module_path = "/modules/mod_online_map";
 
 $api                   = $params->get("map_api");
 $key                   = $params->get("google_key");
@@ -47,18 +48,17 @@ $places             = json_decode(json_encode($params->get("markers", false)), t
 $moduleclass_sfx    = htmlspecialchars($params->get('moduleclass_sfx'));
 
 $document->addStyleSheet("$module_path/assets/css/styles.min.css?v=" . filemtime(__DIR__ . "/assets/css/styles.min.css"));
-JHtml::_('jquery.framework');
 
 switch ($api)
 {
 	case 'google':
 		$document->addScript("https://maps.googleapis.com/maps/api/js?key=$key", true, true);
 		$document->addScript("$module_path/assets/js/google.min.js?v=" . filemtime(__DIR__ . "/assets/js/google.min.js"));
-		require ModuleHelper::getLayoutPath('mod_seoclick_map', 'google');
+		require ModuleHelper::getLayoutPath('mod_online_map', 'google');
 		break;
 	case 'yandex':
 		$document->addScript("https://api-maps.yandex.ru/2.1/?apikey=$key&lang=ru_RU", true, true);
 		$document->addScript("$module_path/assets/js/yandex.min.js?v=" . filemtime(__DIR__ . "/assets/js/yandex.min.js"));
-		require ModuleHelper::getLayoutPath('mod_seoclick_map', 'yandex');
+		require ModuleHelper::getLayoutPath('mod_online_map', 'yandex');
 		break;
 }

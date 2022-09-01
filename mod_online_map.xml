@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.8" client="site" method="upgrade">
-	<name>MOD_SEOCLICK_MAP</name>
+	<name>MOD_ONLINE_MAP</name>
 	<creationDate>25.04.2018</creationDate>
 	<author>Vlast</author>
 	<authorEmail>vlasteg@mail.ru</authorEmail>
-	<authorUrl>https://seoclick.by</authorUrl>
 	<copyright>A copyright</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<version>1.2</version>
-	<description>MOD_SEOCLICK_MAP_XML_DESCRIPTION</description>
+	<description>MOD_ONLINE_MAP_XML_DESCRIPTION</description>
 
 	<files>
-		<filename module="mod_seoclick_map">mod_seoclick_map.php</filename>
+		<filename module="mod_online_map">mod_online_map.php</filename>
 		<folder>assets</folder>
 		<folder>dist</folder>
 		<folder>tmpl</folder>
 		<folder>language</folder>
 		<filename>markers_fields.xml</filename>
-		<filename>mod_seoclick_map.xml</filename>
+		<filename>mod_online_map.xml</filename>
 		<filename>index.html</filename>
 		<filename>README.md</filename>
 		<filename>LICENSE</filename>
@@ -33,66 +32,66 @@
 				<field
 					name="note"
 					type="note"
-					label="MOD_SEOCLICK_MAP_MAIN_OPTIONS"/>
+					label="MOD_ONLINE_MAP_MAIN_OPTIONS"/>
 				<field
 					name="google_key"
 					type="url"
-					label="MOD_SEOCLICK_MAP_GOOGLE_KEY_LABEL"
-					description="MOD_SEOCLICK_MAP_GOOGLE_KEY_DESCRIPTION"
+					label="MOD_ONLINE_MAP_GOOGLE_KEY_LABEL"
+					description="MOD_ONLINE_MAP_GOOGLE_KEY_DESCRIPTION"
 					required ="true"
 				/>
 				<field
 					name="map_height"
 					type="number"
 					min="0"
-					label="MOD_SEOCLICK_MAP_HEIGHT"/>
+					label="MOD_ONLINE_MAP_HEIGHT"/>
 				<field
 					name="map_zoom"
 					type="number"
 					min="0"
-					label="MOD_SEOCLICK_MAP_ZOOM"/>
+					label="MOD_ONLINE_MAP_ZOOM"/>
 				<field
 						name="map_zoom_marker_click"
 						type="number"
 						min="0"
-						label="MOD_SEOCLICK_MAP_MARKER_CLICK_ZOOM"/>
+						label="MOD_ONLINE_MAP_MARKER_CLICK_ZOOM"/>
 				<field
 					name="marker_image"
 					type="media"
-					label="MOD_SEOCLICK_MAP_MARKER_IMAGE"
+					label="MOD_ONLINE_MAP_MARKER_IMAGE"
 					preview="true"
 					directory="/" />
 				<field
 						name="marker_image_width"
 						type="number"
 						min="0"
-						label="MOD_SEOCLICK_MAP_MARKER_IMAGE_WIDTH"
+						label="MOD_ONLINE_MAP_MARKER_IMAGE_WIDTH"
 						showon="map_api:yandex"/>
 				<field
 						name="marker_image_height"
 						type="number"
 						min="0"
-						label="MOD_SEOCLICK_MAP_MARKER_IMAGE_HEIGHT"
+						label="MOD_ONLINE_MAP_MARKER_IMAGE_HEIGHT"
 						showon="map_api:yandex"/>
 				<field
 						name="marker_image_offset_x"
 						type="number"
-						label="MOD_SEOCLICK_MAP_MARKER_IMAGE_OFFSET_X"
-						description="MOD_SEOCLICK_MAP_MARKER_IMAGE_OFFSET_X_DESCRIPTION"
+						label="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_X"
+						description="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_X_DESCRIPTION"
 						default="0"
 						showon="map_api:yandex"/>
 				<field
 						name="marker_image_offset_y"
 						type="number"
 						default="0"
-						label="MOD_SEOCLICK_MAP_MARKER_IMAGE_OFFSET_Y"
-						description="MOD_SEOCLICK_MAP_MARKER_IMAGE_OFFSET_Y_DESCRIPTION"
+						label="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_Y"
+						description="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_Y_DESCRIPTION"
 						showon="map_api:yandex"/>
 				<field
 						name="info_window"
 						type="radio"
 						default="0"
-						label="MOD_SEOCLICK_MAP_INFO_WINDOW"
+						label="MOD_ONLINE_MAP_INFO_WINDOW"
 						class="btn-group btn-group-yesno">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
@@ -100,26 +99,26 @@
 				<field
 					name="note_2"
 					type="note"
-					label="MOD_SEOCLICK_MAP_CENTER_COORD"/>
+					label="MOD_ONLINE_MAP_CENTER_COORD"/>
 				<field
 					name="lat"
 					type="text"
-					label="MOD_SEOCLICK_MAP_LAT"
+					label="MOD_ONLINE_MAP_LAT"
 					required="true"/>
 				<field
 					name="lng"
 					type="text"
-					label="MOD_SEOCLICK_MAP_LNG"
+					label="MOD_ONLINE_MAP_LNG"
 					required="true"/>
 				<field
 					name="note_3"
 					type="note"
-					label="MOD_SEOCLICK_MAP_CONTROLS"/>
+					label="MOD_ONLINE_MAP_CONTROLS"/>
 				<field
 						name="custom_control"
 						type="radio"
 						default="1"
-						label="MOD_SEOCLICK_MAP_CONTROLS_CUSTOM"
+						label="MOD_ONLINE_MAP_CONTROLS_CUSTOM"
 						class="btn-group btn-group-yesno"
                         showon="map_api:google">
 					<option value="1">JYES</option>
@@ -129,7 +128,7 @@
 						name="zoom_control_wheel"
 						type="radio"
 						default="1"
-						label="MOD_SEOCLICK_MAP_CONTROLS_ZOOM_WHEEL"
+						label="MOD_ONLINE_MAP_CONTROLS_ZOOM_WHEEL"
 						class="btn-group btn-group-yesno"
 						showon="map_api:yandex">
 					<option value="1">JYES</option>
@@ -139,7 +138,7 @@
                         name="geolocation_control"
                         type="radio"
                         default="1"
-                        label="MOD_SEOCLICK_MAP_CONTROLS_GEOLOCATION"
+                        label="MOD_ONLINE_MAP_CONTROLS_GEOLOCATION"
                         class="btn-group btn-group-yesno"
                         showon="map_api:yandex">
                     <option value="1">JYES</option>
@@ -149,7 +148,7 @@
                         name="search_control"
                         type="radio"
                         default="1"
-                        label="MOD_SEOCLICK_MAP_CONTROLS_SEARCH"
+                        label="MOD_ONLINE_MAP_CONTROLS_SEARCH"
                         class="btn-group btn-group-yesno"
                         showon="map_api:yandex">
                     <option value="1">JYES</option>
@@ -159,7 +158,7 @@
                         name="route_control"
                         type="radio"
                         default="1"
-                        label="MOD_SEOCLICK_MAP_CONTROLS_ROUTE"
+                        label="MOD_ONLINE_MAP_CONTROLS_ROUTE"
                         class="btn-group btn-group-yesno"
                         showon="map_api:yandex">
                     <option value="1">JYES</option>
@@ -169,7 +168,7 @@
                         name="traffic_control"
                         type="radio"
                         default="1"
-                        label="MOD_SEOCLICK_MAP_CONTROLS_TRAFFIC"
+                        label="MOD_ONLINE_MAP_CONTROLS_TRAFFIC"
                         class="btn-group btn-group-yesno"
                         showon="map_api:yandex">
                     <option value="1">JYES</option>
@@ -179,7 +178,7 @@
                         name="ruler_control"
                         type="radio"
                         default="1"
-                        label="MOD_SEOCLICK_MAP_CONTROLS_RULER"
+                        label="MOD_ONLINE_MAP_CONTROLS_RULER"
                         class="btn-group btn-group-yesno"
                         showon="map_api:yandex">
                     <option value="1">JYES</option>
@@ -189,7 +188,7 @@
 					name="zoom_control"
 					type="radio"
 					default="1"
-					label="MOD_SEOCLICK_MAP_CONTROLS_ZOOM"
+					label="MOD_ONLINE_MAP_CONTROLS_ZOOM"
 					class="btn-group btn-group-yesno">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
@@ -198,7 +197,7 @@
 						name="mapType_control"
 						type="radio"
 						default="1"
-						label="MOD_SEOCLICK_MAP_CONTROLS_MAPTYPE"
+						label="MOD_ONLINE_MAP_CONTROLS_MAPTYPE"
 						class="btn-group btn-group-yesno">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
@@ -207,7 +206,7 @@
 						name="streetView_control"
 						type="radio"
 						default="1"
-						label="MOD_SEOCLICK_MAP_CONTROLS_STREET_VIEW"
+						label="MOD_ONLINE_MAP_CONTROLS_STREET_VIEW"
 						class="btn-group btn-group-yesno"
                         showon="map_api:google">
 					<option value="1">JYES</option>
@@ -217,7 +216,7 @@
 						name="fullscreen_control"
 						type="radio"
 						default="1"
-						label="MOD_SEOCLICK_MAP_CONTROLS_FULLSCREEN"
+						label="MOD_ONLINE_MAP_CONTROLS_FULLSCREEN"
 						class="btn-group btn-group-yesno">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
@@ -225,17 +224,17 @@
 			</fieldset>
 			<fieldset
 					name="places"
-					label="MOD_SEOCLICK_MAP_PLACES">
+					label="MOD_ONLINE_MAP_PLACES">
 				<field
 						name="markers"
 						type="subform"
-						formsource="modules/mod_seoclick_map/markers_fields.xml"
+						formsource="modules/mod_online_map/markers_fields.xml"
 						min="1"
 						max="999999"
 						multiple="true"
 						layout="joomla.form.field.subform.repeatable"
 						groupByFieldset="false"
-						label="MOD_SEOCLICK_MAP_PLACES_LIST"
+						label="MOD_ONLINE_MAP_PLACES_LIST"
 				/>
 			</fieldset>
 			<fieldset

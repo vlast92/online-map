@@ -1,26 +1,25 @@
 {
-  "name": "mod_seoclick_map",
+  "name": "mod_online_map",
   "version": "1.0.0",
-  "description": "Module for adding GoogleMap on your site.",
+  "description": "Module for adding GoogleMap or YandexMap on your site.",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "uglify-js": "^3.4.9",
-    "yuicompressor": "^2.4.8"
+    "uglify-js": "^3.4.9"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vlast92/seoclick-googlemap.git"
+    "url": "git+https://github.com/vlast92/online-map.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vlast92/seoclick-googlemap/issues"
+    "url": "https://github.com/vlast92/online-map/issues"
   },
-  "homepage": "https://github.com/vlast92/seoclick-googlemap#readme"
+  "homepage": "https://github.com/vlast92/online-map#readme"
 }
