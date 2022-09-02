@@ -56,8 +56,7 @@ $script .= "                        },
                         fullscreenControl: " . $map_controls["fullscreen"] . "
                     });
                     ";
-$keys   = array_keys($places);
-if (!empty($places[$keys[0]]["lat"]) && !empty($places[$keys[0]]["lng"]))
+if (!empty($places))
 {
 	$counter      = 1;
 	$places_count = count($places);

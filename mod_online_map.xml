@@ -15,125 +15,131 @@
 		<folder>dist</folder>
 		<folder>tmpl</folder>
 		<folder>language</folder>
+		<folder>uploads</folder>
 		<filename>markers_fields.xml</filename>
 		<filename>mod_online_map.xml</filename>
 		<filename>index.html</filename>
 		<filename>README.md</filename>
 		<filename>LICENSE</filename>
+		<filename>.gitignore</filename>
 	</files>
 
 	<config>
-		<fields name="params">
-			<fieldset name="basic">
+        <fields name="params">
+            <field name="online_map_module"
+                   type="hidden"
+                   default="true"
+            />
+            <fieldset name="basic">
                 <field name="map_api" type="list" default="google" label="Api карт" description="">
                     <option value="google">Google</option>
                     <option value="yandex">Yandex</option>
                 </field>
-				<field
-					name="note"
-					type="note"
-					label="MOD_ONLINE_MAP_MAIN_OPTIONS"/>
-				<field
-					name="google_key"
-					type="url"
-					label="MOD_ONLINE_MAP_GOOGLE_KEY_LABEL"
-					description="MOD_ONLINE_MAP_GOOGLE_KEY_DESCRIPTION"
-					required ="true"
-				/>
-				<field
-					name="map_height"
-					type="number"
-					min="0"
-					label="MOD_ONLINE_MAP_HEIGHT"/>
-				<field
-					name="map_zoom"
-					type="number"
-					min="0"
-					label="MOD_ONLINE_MAP_ZOOM"/>
-				<field
-						name="map_zoom_marker_click"
-						type="number"
-						min="0"
-						label="MOD_ONLINE_MAP_MARKER_CLICK_ZOOM"/>
-				<field
-					name="marker_image"
-					type="media"
-					label="MOD_ONLINE_MAP_MARKER_IMAGE"
-					preview="true"
-					directory="/" />
-				<field
-						name="marker_image_width"
-						type="number"
-						min="0"
-						label="MOD_ONLINE_MAP_MARKER_IMAGE_WIDTH"
-						showon="map_api:yandex"/>
-				<field
-						name="marker_image_height"
-						type="number"
-						min="0"
-						label="MOD_ONLINE_MAP_MARKER_IMAGE_HEIGHT"
-						showon="map_api:yandex"/>
-				<field
-						name="marker_image_offset_x"
-						type="number"
-						label="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_X"
-						description="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_X_DESCRIPTION"
-						default="0"
-						showon="map_api:yandex"/>
-				<field
-						name="marker_image_offset_y"
-						type="number"
-						default="0"
-						label="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_Y"
-						description="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_Y_DESCRIPTION"
-						showon="map_api:yandex"/>
-				<field
-						name="info_window"
-						type="radio"
-						default="0"
-						label="MOD_ONLINE_MAP_INFO_WINDOW"
-						class="btn-group btn-group-yesno">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
-				<field
-					name="note_2"
-					type="note"
-					label="MOD_ONLINE_MAP_CENTER_COORD"/>
-				<field
-					name="lat"
-					type="text"
-					label="MOD_ONLINE_MAP_LAT"
-					required="true"/>
-				<field
-					name="lng"
-					type="text"
-					label="MOD_ONLINE_MAP_LNG"
-					required="true"/>
-				<field
-					name="note_3"
-					type="note"
-					label="MOD_ONLINE_MAP_CONTROLS"/>
-				<field
-						name="custom_control"
-						type="radio"
-						default="1"
-						label="MOD_ONLINE_MAP_CONTROLS_CUSTOM"
-						class="btn-group btn-group-yesno"
+                <field
+                        name="note"
+                        type="note"
+                        label="MOD_ONLINE_MAP_MAIN_OPTIONS"/>
+                <field
+                        name="google_key"
+                        type="url"
+                        label="MOD_ONLINE_MAP_GOOGLE_KEY_LABEL"
+                        description="MOD_ONLINE_MAP_GOOGLE_KEY_DESCRIPTION"
+                        required ="true"
+                />
+                <field
+                        name="map_height"
+                        type="number"
+                        min="0"
+                        label="MOD_ONLINE_MAP_HEIGHT"/>
+                <field
+                        name="map_zoom"
+                        type="number"
+                        min="0"
+                        label="MOD_ONLINE_MAP_ZOOM"/>
+                <field
+                        name="map_zoom_marker_click"
+                        type="number"
+                        min="0"
+                        label="MOD_ONLINE_MAP_MARKER_CLICK_ZOOM"/>
+                <field
+                        name="marker_image"
+                        type="media"
+                        label="MOD_ONLINE_MAP_MARKER_IMAGE"
+                        preview="true"
+                        directory="/" />
+                <field
+                        name="marker_image_width"
+                        type="number"
+                        min="0"
+                        label="MOD_ONLINE_MAP_MARKER_IMAGE_WIDTH"
+                        showon="map_api:yandex"/>
+                <field
+                        name="marker_image_height"
+                        type="number"
+                        min="0"
+                        label="MOD_ONLINE_MAP_MARKER_IMAGE_HEIGHT"
+                        showon="map_api:yandex"/>
+                <field
+                        name="marker_image_offset_x"
+                        type="number"
+                        label="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_X"
+                        description="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_X_DESCRIPTION"
+                        default="0"
+                        showon="map_api:yandex"/>
+                <field
+                        name="marker_image_offset_y"
+                        type="number"
+                        default="0"
+                        label="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_Y"
+                        description="MOD_ONLINE_MAP_MARKER_IMAGE_OFFSET_Y_DESCRIPTION"
+                        showon="map_api:yandex"/>
+                <field
+                        name="info_window"
+                        type="radio"
+                        default="0"
+                        label="MOD_ONLINE_MAP_INFO_WINDOW"
+                        class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                        name="note_2"
+                        type="note"
+                        label="MOD_ONLINE_MAP_CENTER_COORD"/>
+                <field
+                        name="lat"
+                        type="text"
+                        label="MOD_ONLINE_MAP_LAT"
+                        required="true"/>
+                <field
+                        name="lng"
+                        type="text"
+                        label="MOD_ONLINE_MAP_LNG"
+                        required="true"/>
+                <field
+                        name="note_3"
+                        type="note"
+                        label="MOD_ONLINE_MAP_CONTROLS"/>
+                <field
+                        name="custom_control"
+                        type="radio"
+                        default="1"
+                        label="MOD_ONLINE_MAP_CONTROLS_CUSTOM"
+                        class="btn-group btn-group-yesno"
                         showon="map_api:google">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
-				<field
-						name="zoom_control_wheel"
-						type="radio"
-						default="1"
-						label="MOD_ONLINE_MAP_CONTROLS_ZOOM_WHEEL"
-						class="btn-group btn-group-yesno"
-						showon="map_api:yandex">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                        name="zoom_control_wheel"
+                        type="radio"
+                        default="1"
+                        label="MOD_ONLINE_MAP_CONTROLS_ZOOM_WHEEL"
+                        class="btn-group btn-group-yesno"
+                        showon="map_api:yandex">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
                 <field
                         name="geolocation_control"
                         type="radio"
@@ -144,7 +150,7 @@
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
-				<field
+                <field
                         name="search_control"
                         type="radio"
                         default="1"
@@ -154,7 +160,7 @@
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
-				<field
+                <field
                         name="route_control"
                         type="radio"
                         default="1"
@@ -164,7 +170,7 @@
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
-				<field
+                <field
                         name="traffic_control"
                         type="radio"
                         default="1"
@@ -174,7 +180,7 @@
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
-				<field
+                <field
                         name="ruler_control"
                         type="radio"
                         default="1"
@@ -184,67 +190,84 @@
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
-				<field
-					name="zoom_control"
-					type="radio"
-					default="1"
-					label="MOD_ONLINE_MAP_CONTROLS_ZOOM"
-					class="btn-group btn-group-yesno">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
-				<field
-						name="mapType_control"
-						type="radio"
-						default="1"
-						label="MOD_ONLINE_MAP_CONTROLS_MAPTYPE"
-						class="btn-group btn-group-yesno">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
-				<field
-						name="streetView_control"
-						type="radio"
-						default="1"
-						label="MOD_ONLINE_MAP_CONTROLS_STREET_VIEW"
-						class="btn-group btn-group-yesno"
+                <field
+                        name="zoom_control"
+                        type="radio"
+                        default="1"
+                        label="MOD_ONLINE_MAP_CONTROLS_ZOOM"
+                        class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                        name="mapType_control"
+                        type="radio"
+                        default="1"
+                        label="MOD_ONLINE_MAP_CONTROLS_MAPTYPE"
+                        class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                        name="streetView_control"
+                        type="radio"
+                        default="1"
+                        label="MOD_ONLINE_MAP_CONTROLS_STREET_VIEW"
+                        class="btn-group btn-group-yesno"
                         showon="map_api:google">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
-				<field
-						name="fullscreen_control"
-						type="radio"
-						default="1"
-						label="MOD_ONLINE_MAP_CONTROLS_FULLSCREEN"
-						class="btn-group btn-group-yesno">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
-			</fieldset>
-			<fieldset
-					name="places"
-					label="MOD_ONLINE_MAP_PLACES">
-				<field
-						name="markers"
-						type="subform"
-						formsource="modules/mod_online_map/markers_fields.xml"
-						min="1"
-						max="999999"
-						multiple="true"
-						layout="joomla.form.field.subform.repeatable"
-						groupByFieldset="false"
-						label="MOD_ONLINE_MAP_PLACES_LIST"
-				/>
-			</fieldset>
-			<fieldset
-					name="advanced">
-				<field
-						name="moduleclass_sfx"
-						type="text"
-						label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
-						description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
-			</fieldset>
-		</fields>
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                        name="fullscreen_control"
+                        type="radio"
+                        default="1"
+                        label="MOD_ONLINE_MAP_CONTROLS_FULLSCREEN"
+                        class="btn-group btn-group-yesno">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+            <fieldset
+                    name="places"
+                    label="MOD_ONLINE_MAP_PLACES">
+                <field
+                        name="upload_data_file"
+                        type="file"
+                        label="MOD_ONLINE_MAP_UPLOAD_DATA_FILE"
+                        description="MOD_ONLINE_MAP_DATA_FILE_DESCRIPTION"
+                        size="10"
+                        accept=".json"
+                />
+                <field
+                        name="data_file"
+                        type="filelist"
+                        label="MOD_ONLINE_MAP_SELECT_DATA_FILE"
+                        description="MOD_ONLINE_MAP_DATA_FILE_DESCRIPTION"
+                        directory="modules/mod_online_map/uploads"
+                        filter=".+\.json$"
+                        hide_default="true"
+                />
+                <field
+                        name="markers"
+                        type="subform"
+                        formsource="modules/mod_online_map/markers_fields.xml"
+                        min="0"
+                        max="999999"
+                        multiple="true"
+                        layout="joomla.form.field.subform.repeatable"
+                        groupByFieldset="false"
+                        label="MOD_ONLINE_MAP_PLACES_LIST"
+                />
+            </fieldset>
+            <fieldset
+                    name="advanced">
+                <field
+                        name="moduleclass_sfx"
+                        type="text"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+            </fieldset>
+        </fields>
 	</config>
 </extension>

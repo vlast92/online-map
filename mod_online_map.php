@@ -15,6 +15,7 @@ defined('_JEXEC') or die;
 
 $document    = JFactory::getDocument();
 $module_path = "/modules/mod_online_map";
+$module_absolut_path = __DIR__;
 
 $api                   = $params->get("map_api");
 $key                   = $params->get("google_key");
@@ -47,18 +48,18 @@ $map_controls       = array(
 $places             = json_decode(json_encode($params->get("markers", false)), true);
 $moduleclass_sfx    = htmlspecialchars($params->get('moduleclass_sfx'));
 
-$document->addStyleSheet("$module_path/assets/css/styles.min.css?v=" . filemtime(__DIR__ . "/assets/css/styles.min.css"));
+$document->addStyleSheet("$module_path/assets/css/styles.min.css?v=" . filemtime($module_absolut_path . "/assets/css/styles.min.css"));
 
 switch ($api)
 {
 	case 'google':
 		$document->addScript("https://maps.googleapis.com/maps/api/js?key=$key", true, true);
-		$document->addScript("$module_path/assets/js/google.min.js?v=" . filemtime(__DIR__ . "/assets/js/google.min.js"));
+		$document->addScript("$module_path/assets/js/google.min.js?v=" . filemtime($module_absolut_path . "/assets/js/google.min.js"));
 		require ModuleHelper::getLayoutPath('mod_online_map', 'google');
 		break;
 	case 'yandex':
 		$document->addScript("https://api-maps.yandex.ru/2.1/?apikey=$key&lang=ru_RU", true, true);
-		$document->addScript("$module_path/assets/js/yandex.min.js?v=" . filemtime(__DIR__ . "/assets/js/yandex.min.js"));
+		$document->addScript("$module_path/assets/js/yandex.min.js?v=" . filemtime($module_absolut_path . "/assets/js/yandex.min.js"));
 		require ModuleHelper::getLayoutPath('mod_online_map', 'yandex');
 		break;
 }

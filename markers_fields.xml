@@ -15,10 +15,12 @@
             label="MOD_ONLINE_MAP_COORD"/>
         <field
             name="lat"
+            required="true"
             type="text"
             label="MOD_ONLINE_MAP_LAT"/>
         <field
             name="lng"
+            required="true"
             type="text"
             label="MOD_ONLINE_MAP_LNG"/>
         <field

@@ -11,6 +11,7 @@ defined('_JEXEC') or die;
 
 /**
  * @var object $module
+ * @var object $params
  * @var int $map_height
  * @var string $center_lat
  * @var string $center_lng
@@ -46,8 +47,15 @@ $script = "
                         zoom: " . $map_zoom . ",
                         wheel_zoom: ". $zoom_control_wheel ."});";
 
-$keys = array_keys($places);
-if (!empty($places[$keys[0]]["lat"]) && !empty($places[$keys[0]]["lng"]))
+if($data_file = $params->get('data_file')){
+	$script .= <<<JS
+    yandexMap_$module->id.addPlacesFromData({
+        data_path: "$module_path/uploads/$data_file",
+    });
+JS;
+}
+
+if (!empty($places))
 {
 	$counter      = 1;
 	$places_count = count($places);
