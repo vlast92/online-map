@@ -28,14 +28,14 @@ function YandexMap(params) {
             // Чтобы метки начали кластеризоваться, выставляем опцию.
             clusterize: true,
             // ObjectManager принимает те же опции, что и кластеризатор.
-            gridSize: 32,
-            clusterDisableClickZoom: true
+            gridSize: params.cluster.grid_size,
         });
 
         // Чтобы задать опции одиночным объектам и кластерам,
         // обратимся к дочерним коллекциям ObjectManager.
-        objectManager.objects.options.set('preset', 'islands#greenDotIcon');
-        objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+        //objectManager.objects.options.set('preset', 'islands#greenDotIcon');
+        if(params.cluster.icon_color) objectManager.clusters.options.set('clusterIconColor', params.cluster.icon_color);
+
         map.geoObjects.add(objectManager);
 
         $.ajax({

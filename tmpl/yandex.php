@@ -51,6 +51,10 @@ if($data_file = $params->get('data_file')){
 	$script .= <<<JS
     yandexMap_$module->id.addPlacesFromData({
         data_path: "$module_path/uploads/$data_file",
+        cluster: {
+            grid_size: "{$params->get("cluster_grid_size", 64)}",
+            icon_color: "{$params->get("cluster_color", false)}"
+        }
     });
 JS;
 }

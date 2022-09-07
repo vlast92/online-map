@@ -102,6 +102,20 @@
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
+                <field name="cluster_note" type="note" label="MOD_ONLINE_MAP_CLUSTER" />
+                <field
+                        name="cluster_grid_size"
+                        type="number"
+                        min="2"
+                        label="MOD_ONLINE_MAP_CLUSTER_GRID_SIZE"
+                        description="MOD_ONLINE_MAP_CLUSTER_GRID_SIZE_DESCRIPTION"
+                        showon="map_api:yandex"/>
+                <field
+                        name="cluster_color"
+                        type="color"
+                        format="hex"
+                        label="MOD_ONLINE_MAP_CLUSTER_COLOR"
+                        showon="map_api:yandex"/>
                 <field
                         name="note_2"
                         type="note"
