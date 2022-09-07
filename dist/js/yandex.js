@@ -34,6 +34,18 @@ function YandexMap(params) {
         // Чтобы задать опции одиночным объектам и кластерам,
         // обратимся к дочерним коллекциям ObjectManager.
         //objectManager.objects.options.set('preset', 'islands#greenDotIcon');
+
+        if(params.cluster.pie_chart){
+            // Макет метки кластера pieChart.
+            objectManager.clusters.options.set('clusterIconLayout', 'default#pieChart');
+            // Радиус диаграммы в пикселях.
+            if(params.cluster.pie_chart.radius) objectManager.clusters.options.set('clusterIconPieChartRadius', params.cluster.pie_chart.radius);
+            // Радиус центральной части макета.
+            if(params.cluster.pie_chart.core_radius) objectManager.clusters.options.set('clusterIconPieChartCoreRadius', params.cluster.pie_chart.core_radius);
+            // Ширина линий-разделителей секторов и внешней обводки диаграммы.
+            if(params.cluster.pie_chart.stroke_width) objectManager.clusters.options.set('clusterIconPieChartStrokeWidth', params.cluster.pie_chart.stroke_width);
+        }
+
         if(params.cluster.icon_color) objectManager.clusters.options.set('clusterIconColor', params.cluster.icon_color);
 
         map.geoObjects.add(objectManager);

@@ -49,12 +49,21 @@ $script = "
 
 if($data_file = $params->get('data_file')){
 	$script .= <<<JS
+    let cluster_options = {
+        grid_size: "{$params->get("cluster_grid_size", 64)}",
+        icon_color: "{$params->get("cluster_color", false)}"
+    };
+    if({$params->get("cluster_pie_chart", false)}){
+        cluster_options.pie_chart = {
+            radius: "{$params->get("cluster_pie_chart_radius", false)}",
+            core_radius: "{$params->get("cluster_pie_chart_core_radius", false)}",
+            stroke_width: "{$params->get("cluster_pie_chart_stroke_width", false)}"
+        };
+    }
+    
     yandexMap_$module->id.addPlacesFromData({
         data_path: "$module_path/uploads/$data_file",
-        cluster: {
-            grid_size: "{$params->get("cluster_grid_size", 64)}",
-            icon_color: "{$params->get("cluster_color", false)}"
-        }
+        cluster: cluster_options
     });
 JS;
 }

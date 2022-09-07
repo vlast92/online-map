@@ -117,6 +117,38 @@
                         label="MOD_ONLINE_MAP_CLUSTER_COLOR"
                         showon="map_api:yandex"/>
                 <field
+                        name="cluster_pie_chart"
+                        type="radio"
+                        default="0"
+                        label="MOD_ONLINE_MAP_CLUSTER_PIE_CHART"
+                        class="btn-group btn-group-yesno"
+                        showon="map_api:yandex">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                        name="cluster_pie_chart_radius"
+                        type="number"
+                        min="1"
+                        label="MOD_ONLINE_MAP_CLUSTER_PIE_CHART_RADIUS"
+                        description="MOD_ONLINE_MAP_CLUSTER_PIE_CHART_RADIUS_DESCRIPTION"
+                        showon="map_api:yandex[AND]cluster_pie_chart:1"/>
+                <field
+                        name="cluster_pie_chart_core_radius"
+                        type="number"
+                        min="1"
+                        label="MOD_ONLINE_MAP_CLUSTER_PIE_CHART_CORE_RADIUS"
+                        description="MOD_ONLINE_MAP_CLUSTER_PIE_CHART_CORE_RADIUS_DESCRIPTION"
+                        showon="map_api:yandex[AND]cluster_pie_chart:1"/>
+                <field
+                        name="cluster_pie_chart_stroke_width"
+                        type="number"
+                        min="1"
+                        label="MOD_ONLINE_MAP_CLUSTER_PIE_CHART_STROKE_WIDTH"
+                        description="MOD_ONLINE_MAP_CLUSTER_PIE_CHART_STROKE_WIDTH_DESCRIPTION"
+                        showon="map_api:yandex[AND]cluster_pie_chart:1"/>
+
+                <field
                         name="note_2"
                         type="note"
                         label="MOD_ONLINE_MAP_CENTER_COORD"/>
